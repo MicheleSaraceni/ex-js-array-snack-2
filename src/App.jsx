@@ -65,5 +65,24 @@ export default function App() {
   console.log(fullPricedBook);
 
   //-------------------------------------------------------------------------------------------------SNACK 3
+  const authors = books.map((book) => book.author);
+
+  const areAuthorsAdults = authors.every((author) => author.age >= 18);
+  if (areAuthorsAdults) {
+    console.log("Tutti gli autori sono maggiorenni");
+  } else {
+    console.log("Non tutti gli autori sono maggiorenni");
+  }
+
+  authors.sort((a, b) => {
+    if (areAuthorsAdults) {
+      return a.age - b.age;
+    } else {
+      return b.age - a.age;
+    }
+  })
+  console.log(authors);
+
+
 }
 
