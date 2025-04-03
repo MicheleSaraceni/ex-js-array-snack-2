@@ -45,6 +45,8 @@ export default function App() {
       tags: ['html', 'advanced', 'junior', 'mid-senior']
     },
   ];
+
+
   //-------------------------------------------------------------------------------------------------SNACK 1
   const longBooks = books.filter((book) => book.pages > 300);
   const longBooksTitles = longBooks.filter((book) => book.title);
@@ -63,6 +65,7 @@ export default function App() {
 
   const fullPricedBook = discountedBooks.find((book) => Number.isInteger(book.price));
   console.log(fullPricedBook);
+
 
   //-------------------------------------------------------------------------------------------------SNACK 3
   const authors = books.map((book) => book.author);
@@ -84,5 +87,9 @@ export default function App() {
   console.log(authors);
 
 
+  //-------------------------------------------------------------------------------------------------SNACK 4
+  const ages = authors.map((author) => author.age);
+  const agesSum = ages.reduce((acc, curr) => acc + curr, 0);
+  console.log(`La media d'età è: ${Math.round(agesSum / ages.length)}`);
 }
 
